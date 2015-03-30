@@ -9,7 +9,7 @@
 <br />
 
 ## About
-This project is a fork of Stephen Korecky's "Add Clear" project. It is meant to work as a drop-in replacement when using bootstrap.
+This project is a fork of Stephen Korecky's "[Add Clear](https://github.com/skorecky/Add-Clear)" project. It is meant to work as a drop-in replacement when using bootstrap.
 
 
 ## How to use
