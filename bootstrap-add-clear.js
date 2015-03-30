@@ -1,104 +1,111 @@
-// Author: Stephen Korecky
-// Website: http://stephenkorecky.com
-// Plugin Website: http://github.com/skorecky/Add-Clear
-
+/*!
+ * bootstrap-add-clear v1.0.0 (http://github.com/gesquive/bootstrap-add-clear)
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
 ;(function($, window, document, undefined) {
 
-	// Create the defaults once
-	var pluginName = "addClear",
-		defaults = {
-			closeSymbol: "&#10006;",
-			color: "#CCC",
-			top: 1,
-			right: 4,
-			returnFocus: true,
-			showOnLoad: false,
-			onClear: null,
-			hideOnBlur: false
-		};
+  // Create the defaults once
+  var pluginName = "addClear",
+      defaults = {
+        closeSymbol: "",
+        symbolClass: 'glyphicon glyphicon-remove-circle',
+        color: "#CCC",
+        top: 0,
+        right: 0,
+        returnFocus: true,
+        showOnLoad: false,
+        onClear: null,
+        hideOnBlur: false,
+        clearOnEscape: true,
+        wrapperClass: ''
+      };
 
-	// The actual plugin constructor
-	function Plugin(element, options) {
-		this.element = element;
+  // The actual plugin constructor
+  function Plugin(element, options) {
+    this.element = element;
 
-		this.options = $.extend({}, defaults, options);
+    this.options = $.extend({}, defaults, options);
 
-		this._defaults = defaults;
-		this._name = pluginName;
+    this._defaults = defaults;
+    this._name = pluginName;
 
-		this.init();
-	}
+    this.init();
+  }
 
-	Plugin.prototype = {
+  Plugin.prototype = {
 
-		init: function() {
-			var $this = $(this.element),
-					me = this,
-					options = this.options;
+    init: function() {
+      var $this = $(this.element),
+        me = this,
+        options = this.options;
 
-			$this.wrap("<span style='position:relative;' class='add-clear-span'></span>");
-			$this.after($("<a href='#clear' style='display: none;'>" + options.closeSymbol + "</a>"));
-			$this.next().css({
-				color: options.color,
-				'text-decoration': 'none',
-				display: 'none',
-				'line-height': 1,
-				overflow: 'hidden',
-				position: 'absolute',
-				right: options.right,
-				top: options.top
-			}, this);
+      $this.wrap("<div class='add-clear-span has-feedback " + options.wrapperClass + "'></span>");
+      $this.after($("<span class='add-clear-x form-control-feedback " + options.symbolClass + "' style='display: none;'>" + options.closeSymbol + "</span>"));
+      $this.next().css({
+        color: options.color,
+        cursor: 'pointer',
+        'text-decoration': 'none',
+        display: 'none',
+        overflow: 'hidden',
+        position: 'absolute',
+        'pointer-events': 'auto',
+        right: options.right,
+        top: options.top
+      }, this);
 
-			if ($this.val().length >= 1 && options.showOnLoad === true) {
-				$this.siblings("a[href='#clear']").show();
-			}
+      if ($this.val().length >= 1 && options.showOnLoad === true) {
+        $this.siblings(".add-clear-x").show();
+      }
 
-			$this.focus(function() {
-				if ($(this).val().length >= 1) {
-					$(this).siblings("a[href='#clear']").show();
-				}
-			});
+      $this.on('focus.addclear', function() {
+        if ($(this).val().length >= 1) {
+          $(this).siblings(".add-clear-x").show();
+        }
+      });
 
-			$this.blur(function() {
-				var self = this;
+      $this.on('blur.addclear', function() {
+        var self = this;
 
-				if (options.hideOnBlur) {
-					setTimeout(function() {
-						$(self).siblings("a[href='#clear']").hide();
-					}, 50);
-				}
-			});
+        if (options.hideOnBlur) {
+          setTimeout(function() {
+            $(self).siblings(".add-clear-x").hide();
+          }, 50);
+        }
+      });
 
-			$this.keyup(function() {
-				if ($(this).val().length >= 1) {
-					$(this).siblings("a[href='#clear']").show();
-				} else {
-					$(this).siblings("a[href='#clear']").hide();
-				}
-			});
+      $this.on('keyup.addclear', function(e) {
+        if (options.clearOnEscape === true && e.keyCode == 27) {
+          $(this).val('').focus();
+        }
+        if ($(this).val().length >= 1) {
+          $(this).siblings(".add-clear-x").show();
+        } else {
+          $(this).siblings(".add-clear-x").hide();
+        }
+      });
 
-			$("a[href='#clear']").click(function(e) {
-				$(this).siblings(me.element).val("");
-				$(this).hide();
-				if (options.returnFocus === true) {
-					$(this).siblings(me.element).focus();
-				}
-				if (options.onClear) {
-					options.onClear($(this).siblings("input"));
-				}
-				e.preventDefault();
-			});
-		}
+      $this.siblings(".add-clear-x").on('click.addclear', function(e) {
+        $(this).siblings(me.element).val("");
+        $(this).hide();
+        if (options.returnFocus === true) {
+          $(this).siblings(me.element).focus();
+        }
+        if (options.onClear) {
+          options.onClear($(this).siblings("input"));
+        }
+        e.preventDefault();
+      });
+    }
 
-	};
+  };
 
-	$.fn[pluginName] = function(options) {
-		return this.each(function() {
-			if (!$.data(this, "plugin_" + pluginName)) {
-				$.data(this, "plugin_" + pluginName,
-					new Plugin(this, options));
-			}
-		});
-	};
+  $.fn[pluginName] = function(options) {
+    return this.each(function() {
+      if (!$.data(this, "plugin_" + pluginName)) {
+        $.data(this, "plugin_" + pluginName,
+          new Plugin(this, options));
+      }
+    });
+  };
 
 })(jQuery, window, document);
