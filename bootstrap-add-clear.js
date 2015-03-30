@@ -1,24 +1,24 @@
 /*!
- * bootstrap-add-clear v1.0.0 (http://github.com/gesquive/bootstrap-add-clear)
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * bootstrap-add-clear v1.0.1 (http://github.com/gesquive/bootstrap-add-clear)
+ * Licensed under MIT (http://github.com/gesquive/bootstrap-add-clear/blob/master/LICENSE)
  */
 ;(function($, window, document, undefined) {
 
   // Create the defaults once
   var pluginName = "addClear",
-      defaults = {
-        closeSymbol: "",
-        symbolClass: 'glyphicon glyphicon-remove-circle',
-        color: "#CCC",
-        top: 0,
-        right: 0,
-        returnFocus: true,
-        showOnLoad: false,
-        onClear: null,
-        hideOnBlur: false,
-        clearOnEscape: true,
-        wrapperClass: ''
-      };
+    defaults = {
+      closeSymbol: "",
+      symbolClass: 'glyphicon glyphicon-remove-circle',
+      color: "#CCC",
+      top: 0,
+      right: 0,
+      returnFocus: true,
+      showOnLoad: false,
+      onClear: null,
+      hideOnBlur: false,
+      clearOnEscape: true,
+      wrapperClass: ''
+    };
 
   // The actual plugin constructor
   function Plugin(element, options) {
@@ -77,6 +77,14 @@
         if (options.clearOnEscape === true && e.keyCode == 27) {
           $(this).val('').focus();
         }
+        if ($(this).val().length >= 1) {
+          $(this).siblings(".add-clear-x").show();
+        } else {
+          $(this).siblings(".add-clear-x").hide();
+        }
+      });
+
+      $this.on('input.addclear change.addclear paste.addclear', function() {
         if ($(this).val().length >= 1) {
           $(this).siblings(".add-clear-x").show();
         } else {
