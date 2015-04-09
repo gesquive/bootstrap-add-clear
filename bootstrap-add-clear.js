@@ -1,5 +1,5 @@
 /*!
- * bootstrap-add-clear v1.0.1 (http://github.com/gesquive/bootstrap-add-clear)
+ * bootstrap-add-clear v1.0.2 (http://github.com/gesquive/bootstrap-add-clear)
  * Licensed under MIT (http://github.com/gesquive/bootstrap-add-clear/blob/master/LICENSE)
  */
 ;(function($, window, document, undefined) {
@@ -76,6 +76,9 @@
       $this.on('keyup.addclear', function(e) {
         if (options.clearOnEscape === true && e.keyCode == 27) {
           $(this).val('').focus();
+          if (options.onClear) {
+            options.onClear($(this).siblings("input"));
+          }
         }
         if ($(this).val().length >= 1) {
           $(this).siblings(".add-clear-x").show();
