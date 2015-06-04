@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>{{ page.title }} - {{ site.title }}</title>
+
+   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+   <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/style.css" >
+   <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/syntax.css" >
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+   <script src="{{ site.baseurl }}/js/bootstrap.js"></script>
+   <script src="{{ site.baseurl }}/js/bootstrap-add-clear.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ site.baseurl }}">{{ site.title }}</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#getting-started">Getting Started</a></li>
+            <li class=""><a href="#options">Options</a></li>
+            <li class=""><a href="#examples">Examples</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="header" style="padding: 30px;">
+      <div class="container">
+        <h1>{{ page.headline }}</h1>
+        <p>{{ page.message }}</p>
+      </div>
+    </div>
+    <div class="header-sub">
+      <div class="container">
+        <p>
+          <ul class="list-inline flex-row" style="text-align: center">
+            <li>
+                <a class="btn btn-xs btn-primary" href="https://github.com/gesquive/bootstrap-add-clear">
+                <i class="fa fa-github"></i> GitHub</a>
+            </li>
+            <li>
+              <a  class="btn btn-xs btn-success" href="https://github.com/gesquive/bootstrap-add-clear/releases/latest">
+              <i class="fa fa-download"></i> Download</a>
+            </li>
+            <li>
+              <!-- <a class="github-button" href="https://github.com/gesquive/bootstrap-add-clear" data-icon="octicon-star" data-count-href="/gesquive/bootstrap-add-clear/stargazers" data-count-api="/repos/gesquive/bootstrap-add-clear#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star gesquive/bootstrap-add-clear on GitHub">Star</a> -->
+                <iframe src="https://ghbtns.com/github-btn.html?user=gesquive&repo=bootstrap-add-clear&type=star&count=true&size=small&v=2" allowtransparency="true" frameborder="0" scrolling="0" width="76" height="22" style="vertical-align: middle"></iframe>
+            </li>
+            <li>
+              <!-- <a class="github-button" href="https://github.com/gesquive/bootstrap-add-clear" data-icon="octicon-eye" data-count-href="/gesquive/bootstrap-add-clear/watchers" data-count-api="/repos/gesquive/bootstrap-add-clear#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch gesquive/bootstrap-add-clear on GitHub">Watch</a> -->
+                <iframe src="https://ghbtns.com/github-btn.html?user=gesquive&repo=bootstrap-add-clear&type=watch&count=true&size=small&v=2" allowtransparency="true" frameborder="0" scrolling="0" width="93" height="22" style="vertical-align: middle"></iframe>
+            </li>
+            <li>
+              <!-- <a class="github-button" href="https://github.com/gesquive" data-count-href="/gesquive/followers" data-count-api="/users/gesquive#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @gesquive on GitHub">Follow @gesquive</a> -->
+                <iframe src="https://ghbtns.com/github-btn.html?user=gesquive&repo=bootstrap-add-clear&type=follow&count=true&size=small" allowtransparency="true" frameborder="0" scrolling="0" width="180" height="22" style="vertical-align: middle"></iframe>
+            </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="content">
+        {{ content }}
+      </div>
+    </div><!-- /.container -->
+<!-- <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script> -->
+<script type="text/javascript">
+  var offset = 60;
+  $('body').scrollspy({ target: '#navbar', offset: offset });
+
+  // $('.navbar li a').click(function(event) {
+  //     event.preventDefault();
+  //     $($(this).attr('href'))[0].scrollIntoView();
+  //     scrollBy(0, -offset);
+  // });
+</script>
+</body>
+</html>

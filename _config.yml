@@ -1,0 +1,26 @@
+###########
+# site.url, site.title
+
+title: 'bootstrap-add-clear'
+baseurl:   '/bootstrap-add-clear'
+
+
+########
+# more settings
+
+highlighter: pygments
+markdown: kramdown
+
+sass:
+  sass_dir: css
+  style:    expanded
+
+
+
+exclude:
+- README.md
+
+
+safe: true
+lsi: false
+
