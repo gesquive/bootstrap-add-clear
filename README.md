@@ -11,18 +11,29 @@
 ## About
 This project is a fork of Stephen Korecky's "[Add Clear](https://github.com/skorecky/Add-Clear)" project. It is meant to work as a drop-in replacement when using bootstrap.
 
-
-## How to use
-- Load jQuery & Bootstrap into your project
-- Load Add Clear plugin into your project
-- Setup which elements you would like to apply this plugin to.
-
-### Usage
-```javascript
-$(function(){
-  $(":input").addClear();
-});
+## Getting Started
+How you acquire bootstrap-add-clear is up to you.
+#### Bower
+Install with [Bower](http://bower.io/):
+```bash
+bower install bootstrap-add-clear
 ```
+
+#### Github
+Clone the [boostrap-add-clear repository](https://github.com/gesquive/bootstrap-add-clear/):
+```bash
+git clone git@github.com:gesquive/bootstrap-add-clear.git
+```
+
+#### Direct Download
+ * [zip](https://github.com/gesquive/bootstrap-add-clear/archive/master.zip)
+ * [tarbell](https://github.com/gesquive/bootstrap-add-clear/archive/master.tar.gz)
+ * Individual Files
+    * [bootstrap-add-clear.js](https://raw.githubusercontent.com/gesquive/bootstrap-add-clear/master/bootstrap-add-clear.js)
+    * [bootstrap-add-clear.min.js](https://raw.githubusercontent.com/gesquive/bootstrap-add-clear/master/bootstrap-add-clear.min.js)
+
+**Note**: bootstrap-add-clear has a dependency on jquery 1.8+ and Bootstrap 3
+
 ### Available Options
 
 <table>
