@@ -10,11 +10,9 @@
     "clear"
   ],
   "version": "1.0.2",
-  "maintainers": [
-    {
-      "name": "Gus Esquivel",
-      "url": "http://gus-esquivel.com"
-    }
+  "main": "bootstrap-add-clear.js",
+  "authors": [
+    "Gus Esquivel <gesquive@gmail.com>"
   ],
   "licenses": [
     {
