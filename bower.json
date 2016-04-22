@@ -9,7 +9,7 @@
     "text",
     "clear"
   ],
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "bootstrap-add-clear.js",
   "authors": [
     "Gus Esquivel <gesquive@gmail.com>"
@@ -22,7 +22,7 @@
   ],
   "bugs": "https://github.com/gesquive/bootstrap-add-clear/issues",
   "homepage": "https://github.com/gesquive/bootstrap-add-clear",
-  "docs": "https://github.com/gesquive/bootstrap-add-clear",
+  "docs": "http://gesquive.github.io/bootstrap-add-clear",
   "download": "https://github.com/gesquive/bootstrap-add-clear/releases",
   "dependencies": {
     "jquery": ">=1.8"

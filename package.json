@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-add-clear",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "jQuery plugin for adding a clear action to the end of a bootstrap text input",
   "main": "bootstrap-add-clear.js",
   "scripts": {
@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/gesquive/bootstrap-add-clear/issues"
   },
-  "homepage": "https://github.com/gesquive/bootstrap-add-clear#readme",
+  "homepage": "http://gesquive.github.io/bootstrap-add-clear",
   "peerDependencies": {
     "jquery": ">=1.8"
   }
