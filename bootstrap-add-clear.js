@@ -1,5 +1,5 @@
 /*!
- * bootstrap-add-clear v1.0.2 (http://github.com/gesquive/bootstrap-add-clear)
+ * bootstrap-add-clear v1.0.3 (http://github.com/gesquive/bootstrap-add-clear)
  * Licensed under MIT (http://github.com/gesquive/bootstrap-add-clear/blob/master/LICENSE)
  */
 ;(function($, window, document, undefined) {
@@ -17,7 +17,8 @@
       onClear: null,
       hideOnBlur: false,
       clearOnEscape: true,
-      wrapperClass: ''
+      wrapperClass: '',
+      zindex: 100
     };
 
   // The actual plugin constructor
@@ -42,15 +43,16 @@
       $this.wrap("<div class='add-clear-span has-feedback " + options.wrapperClass + "'></div>");
       $this.after($("<span class='add-clear-x form-control-feedback " + options.symbolClass + "' style='display: none;'>" + options.closeSymbol + "</span>"));
       $this.next().css({
-        color: options.color,
-        cursor: 'pointer',
+        'color': options.color,
+        'cursor': 'pointer',
         'text-decoration': 'none',
-        display: 'none',
-        overflow: 'hidden',
-        position: 'absolute',
+        'display': 'none',
+        'overflow': 'hidden',
+        'position': 'absolute',
         'pointer-events': 'auto',
-        right: options.right,
-        top: options.top
+        'right': options.right,
+        'top': options.top,
+        'zindex': options.zindex
       }, this);
 
       if ($this.val().length >= 1 && options.showOnLoad === true) {
