@@ -19,6 +19,21 @@ Install with [Bower](http://bower.io/):
 bower install bootstrap-add-clear
 ```
 
+#### NPM
+Install with [NPM](http://npmjs.org):
+```bash
+npm install bootstrap-add-clear
+```
+
+If you are using [browserify](http://browserify.org/) to bundle, you will have to expose jQuery globally:
+
+***entry.js***
+```javascript
+var $ = require('jquery');
+global.jQuery = $;
+require('bootstrap-add-clear');
+```
+
 #### Github
 Clone the [boostrap-add-clear repository](https://github.com/gesquive/bootstrap-add-clear/):
 ```bash
