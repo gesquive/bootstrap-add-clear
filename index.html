@@ -12,6 +12,21 @@ Install with <a href="http://bower.io/">Bower</a>:
 bower install bootstrap-add-clear
 {% endhighlight %}
 
+<h4>NPM</h4>
+Install with <a href="http://npmjs.org/">NPM</a>:
+{% highlight bash %}
+npm install bootstrap-add-clear
+{% endhighlight %}
+If you are using browserify to bundle, you will have to expose jQuery globally:
+
+
+<i>entry.js</i>
+{% highlight javascript %}
+var $ = require('jquery');
+global.jQuery = $;
+require('bootstrap-add-clear');
+{% endhighlight %}
+
 <h4>Github</h4>
 Clone the <a href="https://github.com/gesquive/bootstrap-add-clear/">boostrap-add-clear repository</a>:
 {% highlight bash %}
@@ -20,12 +35,12 @@ git clone git@github.com:gesquive/bootstrap-add-clear.git
 
 <h4>Direct Download</h4>
 <ul>
-	<li><a href="https://github.com/gesquive/bootstrap-add-clear/archive/master.zip">zip</a></li>
-	<li><a href="https://github.com/gesquive/bootstrap-add-clear/archive/master.tar.gz">tarball</a></li>
+	<li><a href="https://github.com/gesquive/bootstrap-add-clear/archive/v1.0.4.zip">zip</a></li>
+	<li><a href="https://github.com/gesquive/bootstrap-add-clear/archive/v1.0.4.tar.gz">tarball</a></li>
 	<li>Individual Files
 	<ul>
-		<li><a href="https://raw.githubusercontent.com/gesquive/bootstrap-add-clear/master/bootstrap-add-clear.js">bootstrap-add-clear.js</a></li>
-		<li><a href="https://raw.githubusercontent.com/gesquive/bootstrap-add-clear/master/bootstrap-add-clear.min.js">bootstrap-add-clear.min.js</a></li>
+		<li><a href="https://raw.githubusercontent.com/gesquive/bootstrap-add-clear/v1.0.4/bootstrap-add-clear.js">bootstrap-add-clear.js</a></li>
+		<li><a href="https://raw.githubusercontent.com/gesquive/bootstrap-add-clear/v1.0.4/bootstrap-add-clear.min.js">bootstrap-add-clear.min.js</a></li>
 	</ul>
 </ul>
 <b>Note</b>: bootstrap-add-clear has a dependency on jquery 1.8+ and Bootstrap 3
@@ -92,6 +107,12 @@ git clone git@github.com:gesquive/bootstrap-add-clear.git
 		<td>boolean</td>
 		<td>false</td>
 		<td>If true, hide the symbol when focus is lost from the text box</td>
+	</tr>
+	<tr>
+		<td>zindex</td>
+		<td>number</td>
+		<td>100</td>
+		<td>The zindex to apply to the symbol</td>
 	</tr>
 	<tr>
 		<td>onClear</td>
@@ -178,5 +199,3 @@ $(":input").addClear({
 		});
 	});
 </script>
-
-
