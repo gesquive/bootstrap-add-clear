@@ -5,7 +5,8 @@
 <a href="https://github.com/scoman81">scoman81</a>,
 <a href="https://github.com/Steve887">Steve887</a>,
 <a href="https://github.com/Deividy">Deividy</a>,
-<a href="https://github.com/grrizzly">grrizzly</a>
+<a href="https://github.com/grrizzly">grrizzly</a>,
+<a href="https://github.com/adambiggs">adambiggs</a>
 
 <br />
 
@@ -42,11 +43,11 @@ git clone git@github.com:gesquive/bootstrap-add-clear.git
 ```
 
 #### Direct Download
- * [zip](https://github.com/gesquive/bootstrap-add-clear/archive/v1.0.4.zip)
- * [tarbell](https://github.com/gesquive/bootstrap-add-clear/archive/v1.0.4.tar.gz)
+ * [zip](https://github.com/gesquive/bootstrap-add-clear/archive/v1.0.5.zip)
+ * [tarbell](https://github.com/gesquive/bootstrap-add-clear/archive/v1.0.5.tar.gz)
  * Individual Files
-    * [bootstrap-add-clear.js](https://raw.githubusercontent.com/gesquive/bootstrap-add-clear/v1.0.4/bootstrap-add-clear.js)
-    * [bootstrap-add-clear.min.js](https://raw.githubusercontent.com/gesquive/bootstrap-add-clear/v1.0.4/bootstrap-add-clear.min.js)
+    * [bootstrap-add-clear.js](https://raw.githubusercontent.com/gesquive/bootstrap-add-clear/v1.0.5/bootstrap-add-clear.js)
+    * [bootstrap-add-clear.min.js](https://raw.githubusercontent.com/gesquive/bootstrap-add-clear/v1.0.5/bootstrap-add-clear.min.js)
 
 **Note**: bootstrap-add-clear has a dependency on jquery 1.8+ and Bootstrap 3
 

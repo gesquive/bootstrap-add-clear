@@ -1,5 +1,5 @@
 /*!
- * bootstrap-add-clear v1.0.4 (http://github.com/gesquive/bootstrap-add-clear)
+ * bootstrap-add-clear v1.0.5 (http://github.com/gesquive/bootstrap-add-clear)
  * Licensed under MIT (http://github.com/gesquive/bootstrap-add-clear/blob/master/LICENSE)
  */
 ;(function($, window, document, undefined) {

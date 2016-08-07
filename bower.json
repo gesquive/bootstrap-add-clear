@@ -9,7 +9,7 @@
     "text",
     "clear"
   ],
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "bootstrap-add-clear.js",
   "authors": [
     "Gus Esquivel <gesquive@gmail.com>"
