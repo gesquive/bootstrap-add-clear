@@ -4,22 +4,7 @@
  */
 ;(function($, window, document, undefined) {
 
-  // Create the defaults once
-  var pluginName = "addClear",
-    defaults = {
-      closeSymbol: "",
-      symbolClass: 'glyphicon glyphicon-remove-circle',
-      color: "#CCC",
-      top: 0,
-      right: 0,
-      returnFocus: true,
-      showOnLoad: false,
-      onClear: null,
-      hideOnBlur: false,
-      clearOnEscape: true,
-      wrapperClass: '',
-      zindex: 100
-    };
+  var pluginName = "addClear";
 
   // The actual plugin constructor
   function Plugin(element, options) {
@@ -119,6 +104,23 @@
           new Plugin(this, options));
       }
     });
+  };
+
+  $.fn[pluginName].Constructor = Plugin;
+
+  var defaults = $.fn[pluginName].defaults = {
+    closeSymbol: "",
+    symbolClass: 'glyphicon glyphicon-remove-circle',
+    color: "#CCC",
+    top: 0,
+    right: 0,
+    returnFocus: true,
+    showOnLoad: false,
+    onClear: null,
+    hideOnBlur: false,
+    clearOnEscape: true,
+    wrapperClass: '',
+    zindex: 100
   };
 
 })(jQuery, window, document);
