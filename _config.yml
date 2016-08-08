@@ -8,7 +8,7 @@ baseurl:   '/bootstrap-add-clear'
 ########
 # more settings
 
-highlighter: pygments
+highlighter: rouge
 markdown: kramdown
 
 sass:
@@ -23,4 +23,3 @@ exclude:
 
 safe: true
 lsi: false
-
