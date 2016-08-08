@@ -88,23 +88,43 @@
         if (options.returnFocus === true) {
           $(this).siblings(me.element).focus();
         }
-        if (options.onClear) {
+				if (options.onClear) {
           options.onClear($(this).siblings("input"));
-        }
+        }        
         e.preventDefault();
       });
     }
 
   };
 
-  $.fn[pluginName] = function(options) {
-    return this.each(function() {
-      if (!$.data(this, "plugin_" + pluginName)) {
-        $.data(this, "plugin_" + pluginName,
-          new Plugin(this, options));
-      }
-    });
-  };
+ $.fn[pluginName] = function (options, optionName, optionValue) {
+
+        return this.each(function () {
+            if (options === "option") {
+                var $this = $(this);
+                if (optionName === "show") {
+                    $this.siblings(".add-clear-x").show();
+                } else if (optionName === "hide") {
+                    $this.siblings(".add-clear-x").hide();
+                }
+            }
+            var isSetOption = optionName && optionName !== "show" && optionName !== "hide";
+            if (isSetOption) {
+                var oldInstance = $.data(this, "plugin_" + pluginName);
+                if (!oldInstance || !oldInstance.options) {
+                    throw "Cannot set option, plugin was not instantiated";
+                }
+                oldInstance.options[optionName] = optionValue;
+            } else {
+                if (!$.data(this, "plugin_" + pluginName)) {
+                    $.data(this,
+                        "plugin_" + pluginName,
+                        new Plugin(this, options));
+                }
+            }
+
+        });
+    };
 
   $.fn[pluginName].Constructor = Plugin;
 
