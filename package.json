@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-add-clear",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "jQuery plugin for adding a clear action to the end of a bootstrap text input",
   "main": "bootstrap-add-clear.js",
   "scripts": {

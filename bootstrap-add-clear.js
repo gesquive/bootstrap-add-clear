@@ -1,5 +1,5 @@
 /*!
- * bootstrap-add-clear v1.0.5 (http://github.com/gesquive/bootstrap-add-clear)
+ * bootstrap-add-clear v1.0.6 (http://github.com/gesquive/bootstrap-add-clear)
  * Licensed under MIT (http://github.com/gesquive/bootstrap-add-clear/blob/master/LICENSE)
  */
 ;(function($, window, document, undefined) {
@@ -88,9 +88,9 @@
         if (options.returnFocus === true) {
           $(this).siblings(me.element).focus();
         }
-				if (options.onClear) {
+        if (options.onClear) {
           options.onClear($(this).siblings("input"));
-        }        
+        }
         e.preventDefault();
       });
     }
@@ -98,7 +98,6 @@
   };
 
  $.fn[pluginName] = function (options, optionName, optionValue) {
-
         return this.each(function () {
             if (options === "option") {
                 var $this = $(this);
