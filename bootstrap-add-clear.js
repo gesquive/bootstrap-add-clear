@@ -1,5 +1,5 @@
 /*!
- * bootstrap-add-clear v1.0.6 (http://github.com/gesquive/bootstrap-add-clear)
+ * bootstrap-add-clear v1.0.7 (http://github.com/gesquive/bootstrap-add-clear)
  * Licensed under MIT (http://github.com/gesquive/bootstrap-add-clear/blob/master/LICENSE)
  */
 ;(function($, window, document, undefined) {
@@ -81,6 +81,15 @@
           $(this).siblings(".add-clear-x").hide();
         }
       });
+
+      $this.parent().siblings('button[type=reset]').on('click.addClear', function() {
+        if ($(this).siblings(me.element).val().length >= 1) {
+          $(this).siblings(me.element).children('.add-clear-x').show();
+        } else {
+          $(this).siblings(me.element).children('.add-clear-x').hide();
+        }
+      });
+
 
       $this.siblings(".add-clear-x").on('click.addclear', function(e) {
         $(this).siblings(me.element).val("");
