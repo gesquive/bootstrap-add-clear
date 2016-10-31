@@ -37,7 +37,7 @@
         'pointer-events': 'auto',
         'right': options.right,
         'top': options.top,
-        'zindex': options.zindex
+        'z-index': options.zindex
       }, this);
 
       if ($this.val().length >= 1 && options.showOnLoad === true) {
